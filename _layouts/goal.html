@@ -8,7 +8,7 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-4 col-md-3 col-lg-2">
-        <img src="{{ site.baseurl }}/assets/img/goals/{{ current_language }}/{{ goal_number }}.png" alt="{{ translated_goal.short }} - {{ t.general.goal }} {{ goal_number }}" />
+        <img src="{{ site.goal_image_base }}/{{ current_language }}/{{ goal_number }}.png" alt="{{ translated_goal.short }} - {{ t.general.goal }} {{ goal_number }}" />
       </div>
       <div class="col-xs-8 col-md-9 col-lg-10">
         <h1>
@@ -26,15 +26,14 @@
 
   {% assign goal_indicators = site.data.meta | where: 'sdg_goal', page.sdg_goal | sort: 'indicator_sort_order' %}
   {% for indicator in goal_indicators %}
+    {% assign status_css = indicator.reporting_status | slugify %}
     {%- assign translated_indicator = t.global_indicators[indicator.indicator] -%}
 
     {% if indicator.reporting_status == 'notstarted' %}
       {% assign status_desc = t.status.exploring_data_sources %}
-      {% assign status_css = 'danger' %}          
     {% endif %}
     {% if indicator.reporting_status == 'complete' %}
       {% assign status_desc = t.status.reported_online %}
-      {% assign status_css = 'success' %}
     {% endif %}
 
     {% cycle 'add row' : '<div class="indicator-cards row no-gutters">', '', '', '' %}
