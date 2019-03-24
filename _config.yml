@@ -49,7 +49,7 @@ email_contacts:
 
 # Github Repo for Data
 repo_name: sdg-data
-branch: test-reporting-stats
+branch: develop
 org_name: ONSdigital
 
 # Build settings
