@@ -1,9 +1,9 @@
 .notstarted {
-  background-color: #828282;
+  background-color: #c6e7f0;
 }
 .inprogress {
   background-color: #f0ad4e;
 }
 .complete {
-  background-color: #1e9dd8;
+  background-color: #0690ba;
 }
