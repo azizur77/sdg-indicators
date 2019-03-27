@@ -111,7 +111,7 @@ plugins:
   - jekyll-get-json
   - jekyll-redirect-from
 
-remote_theme: open-sdg/open-sdg
+remote_theme: open-sdg/open-sdg@ignore_fields
 
 # Mapping
 map_options:
